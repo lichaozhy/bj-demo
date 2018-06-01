@@ -1,0 +1,92 @@
+<template>
+  <div id="app">
+    <div id="bg-mask"></div>
+
+    <transition
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut">
+      <demo-nav
+        v-if="isNavBarShow"></demo-nav>
+    </transition>
+
+    <b-container fluid id="demo-container">
+      <router-view id="demo-router-view" />
+    </b-container>
+
+    <b-jumbotron id="demo-footer" class="rounded-0 my-0">
+      Copyright@2017-2018  ALL Rights Reseveed 最高人民检察院<br>
+      建议使用1366*768分辨率 IE8.0以上版本浏览器
+    </b-jumbotron>
+  </div>
+</template>
+
+<script>
+import DemoNav from './components/utils/Nav.vue';
+const NAV_SHOWING_OFFSET_TOP = 200;
+
+export default {
+  data() {
+    return {
+      scrollTop: 0
+    }
+  },
+  computed: {
+    isNavBarShow() {
+      return this.scrollTop > NAV_SHOWING_OFFSET_TOP;
+    }
+  },
+  components: {
+    DemoNav
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScrollTop);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.updateScrollTop);
+  },
+  methods: {
+    updateScrollTop() {
+      this.scrollTop = window.scrollY;
+    }
+  }
+}
+</script>
+
+
+<style lang="less">
+body {
+  background-image: url('./assets/banner-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#demo-container {
+  z-index: 1;
+  position: relative;
+
+  #demo-router-view {
+    overflow: hidden;
+    min-height: 800px;
+  }
+}
+
+#bg-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    rgba(3, 63, 91, 1), 
+    rgba(255, 255, 255, .1) 30%,
+    rgba(255, 255, 255, 1) 40%
+  );
+}
+
+#demo-footer {
+  background: #084059;
+  color: #eee;
+  text-align: center;
+}
+</style>
