@@ -8,7 +8,8 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
 	state: {
 		lang: 'en',
-		setting: false
+		setting: false,
+		showCalendar: false
 	},
 	actions: {
 		openSettingMode({ commit }) {
@@ -17,10 +18,16 @@ const store = new Vuex.Store({
 		closeSettingMode({ commit }) {
 			commit('updateSetting');
 		},
+		toggleCalendar({ commit, state }) {
+			commit('setCalendarShow', !state.showCalendar);
+		}
 	},
 	mutations: {
 		updateSetting(state, val = false) {
 			state.setting = val;
+		},
+		setCalendarShow(state, val = false) {
+			state.showCalendar = val;
 		}
 	}
 });

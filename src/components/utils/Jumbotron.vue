@@ -33,7 +33,8 @@
 							pill
 							variant="danger">2</b-badge>
 					</b-button>
-					<b-button>
+					<b-button
+						@click="toggleCalendar()">
 						<font-awesome-icon
 							fixed-width
 							icon="bars" />
@@ -101,6 +102,9 @@ export default {
 		closeSetting() {
 			this.$store.dispatch('closeSettingMode');
 		},
+		toggleCalendar() {
+			this.$store.dispatch('toggleCalendar');
+		}
 	}
 }
 </script>

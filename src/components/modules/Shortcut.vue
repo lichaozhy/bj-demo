@@ -3,7 +3,7 @@
 		<h4 slot="header">
 			<font-awesome-icon icon="map-signs" /><a
 				class="mx-3">快捷入口</a><em>shortcut</em>
-			<b-button class="float-right"><font-awesome-icon
+			<b-button class="float-right" size="sm"><font-awesome-icon
 					icon="plus" /></b-button>
 		</h4>
 		<draggable

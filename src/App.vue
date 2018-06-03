@@ -1,6 +1,12 @@
 <template>
   <div id="app">
     <div id="bg-mask"></div>
+    
+    <transition
+      enter-active-class="animated slideInRight"
+      leave-active-class="animated slideOutRight">
+      <demo-calendar v-if="isCalendarShow" />
+    </transition>
 
     <transition
       enter-active-class="animated fadeIn"
@@ -22,6 +28,7 @@
 
 <script>
 import DemoNav from './components/utils/Nav.vue';
+import DemoCalendar from './components/Calendar.vue';
 const NAV_SHOWING_OFFSET_TOP = 200;
 
 export default {
@@ -33,10 +40,13 @@ export default {
   computed: {
     isNavBarShow() {
       return this.scrollTop > NAV_SHOWING_OFFSET_TOP;
+    },
+    isCalendarShow() {
+      return this.$store.state.showCalendar;
     }
   },
   components: {
-    DemoNav
+    DemoNav, DemoCalendar
   },
   mounted() {
     window.addEventListener('scroll', this.updateScrollTop);
