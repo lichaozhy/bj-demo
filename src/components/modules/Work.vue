@@ -7,10 +7,14 @@
 			nav-wrapper-class="demo-work-tabs">
 
 			<b-tab title="待办工作" active>
-				待办工作
+				<h2>待办工作</h2><hr>
+				<b-table striped hover
+					:items="finishedWork"></b-table>
 			</b-tab>
 			<b-tab title="已办工作">
-				已办工作
+				<h2>已办工作</h2><hr>
+				<b-table striped hover
+					:items="finishedWork"></b-table>
 			</b-tab>
 		</b-tabs>
 		<div class="demo-work-heading my-4 mx-4">
@@ -26,9 +30,22 @@
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 
+function finishedWorkMock() {
+	return new Array(7).fill({
+		startAt: '2018-05-05',
+		source: '档案管理',
+		title: '徐显明：紧紧围绕“五个结合”要求 切实加强检察理论研究工作'
+	});
+}
+
 export default {
 	components: {
 		FontAwesomeIcon
+	},
+	computed: {
+		finishedWork() {
+			return finishedWorkMock();
+		}
 	}
 }
 </script>
@@ -56,6 +73,8 @@ export default {
 	.demo-work-tabs {
 		background-image: url('../../assets/work-bg.jpg');
 		background-position: center center;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
 		width: 220px;
 
 		.demo-work-nav {
@@ -63,13 +82,14 @@ export default {
 			right: 0;
 			position: absolute;
 			height: auto !important;
-			bottom: 10%;
+			bottom: 25%;
 			padding: 0;
+			background: transparent;
 
 			li {
 				border-left: 5px #2990CB solid;
 				margin: .5em 0;
-				font-size: 20px;
+				font-size: 18px;
 				font-weight: 300;
 
 				a {

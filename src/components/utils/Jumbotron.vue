@@ -38,8 +38,18 @@
 							fixed-width
 							icon="bars" />
 					</b-button>
-					<b-button>
+					<b-button
+						v-if="!isSetting"
+						@click="openSetting()">
 						<font-awesome-icon
+							fixed-width
+							icon="cog" />
+					</b-button>
+					<b-button
+						@click="closeSetting()"
+						v-if="isSetting">
+						<font-awesome-icon
+							class="fa-spin"
 							fixed-width
 							icon="cog" />
 					</b-button>
@@ -78,6 +88,19 @@ import FontAwesomeIcon from '@fortawesome/vue-fontawesome';
 export default {
 	components: {
 		FontAwesomeIcon
+	},
+	computed: {
+		isSetting() {
+			return this.$store.state.setting;
+		}
+	},
+	methods: {
+		openSetting() {
+			this.$store.dispatch('openSettingMode');
+		},
+		closeSetting() {
+			this.$store.dispatch('closeSettingMode');
+		},
 	}
 }
 </script>

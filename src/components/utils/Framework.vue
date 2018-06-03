@@ -187,16 +187,19 @@ export default {
 				row: null,
 				col: null
 			},
-			isSetting: 0,
 			structure: [
 				[DemoShortcut, DemoNotification],
 				[DemoWork],
 				[DemoStatistics],
 				[DemoWarning],
 				[DemoStatistics, DemoWarning],
-				[null],
 				[DemoWork],
 			]
+		}
+	},
+	computed: {
+		isSetting() {
+			return this.$store.state.setting;
 		}
 	}
 }
@@ -216,6 +219,8 @@ export default {
 .demo-framework {
 	&.setting {
 		.demo-slot {
+			box-sizing: content-box;
+			width: 100%;
 			position: relative;
 			padding: 10px;
 			margin-top: -10px;

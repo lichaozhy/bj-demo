@@ -79,7 +79,7 @@ export default {
 		startToPoint() {
 			this.pointingTimer = setInterval(() => {
 				const { left, top } = this.currentPoint;
-				this.$el.style.display = 'none';
+				this.$el.style.visibility = 'hidden';
 
 				this.elementAppointed = document.elementFromPoint(left, top);
 				this.elementAppointed.dispatchEvent(new Event('appointed', {
@@ -87,8 +87,8 @@ export default {
 					cancelable: true
 				}));
 
-				this.$el.style.display = 'block';
-			}, 100);
+				this.$el.style.visibility = 'visible';
+			}, 500);
 		}
 	},
 	data() {
