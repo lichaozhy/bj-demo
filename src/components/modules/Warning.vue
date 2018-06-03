@@ -1,6 +1,6 @@
 <template>
     
-    <div>Warning</div>
+    <b-card></b-card>
 </template>
 
 <script>

@@ -15,7 +15,7 @@
 
     <b-jumbotron id="demo-footer" class="rounded-0 my-0">
       Copyright@2017-2018  ALL Rights Reseveed 最高人民检察院<br>
-      建议使用1366*768分辨率 IE8.0以上版本浏览器
+      建议使用1366*768分辨率 >= IE9 以上版本浏览器
     </b-jumbotron>
   </div>
 </template>
@@ -58,14 +58,15 @@ body {
   background-image: url('./assets/banner-bg.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
+  user-select: none;
 }
 
 #demo-container {
   z-index: 1;
   position: relative;
+  overflow: hidden;
 
   #demo-router-view {
-    overflow: hidden;
     min-height: 800px;
   }
 }

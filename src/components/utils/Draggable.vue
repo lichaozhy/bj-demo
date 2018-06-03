@@ -1,5 +1,5 @@
 <template>
-	<div class="demo-draggable-handler h-100 w-100 border"
+	<div class="demo-draggable-handler h-100 w-100"
 		:class="{
 			'active': isDragging
 		}"
@@ -120,14 +120,13 @@ export default {
 }
 
 .demo-draggable-mask {
-	background: rgba(1, 255, 255, 0.4);
+	background: rgba(0, 0, 0, 0.05);
 	cursor: move;
 	top: 0;
 	left: 0;
 }
 
 .demo-draggable-top {
-	background: rgba(1, 1, 1, .1);
 	position: fixed;
 	width: 100%;
 	height: 100%;

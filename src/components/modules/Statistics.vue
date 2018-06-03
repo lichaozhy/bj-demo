@@ -1,6 +1,6 @@
 <template>
     
-    <div>Statistics</div>
+    <b-card></b-card>
 </template>
 
 <script>

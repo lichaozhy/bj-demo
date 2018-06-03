@@ -1,6 +1,5 @@
 <template>
-    
-    <div>Work</div>
+    <b-card></b-card>
 </template>
 
 <script>

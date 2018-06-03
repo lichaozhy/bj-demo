@@ -36,6 +36,7 @@
 
 <style lang="less">
 #demo-nav {
+	background-image: url('../../assets/top-bg.jpg');
 	background-color: #084059;
 }
 </style>
