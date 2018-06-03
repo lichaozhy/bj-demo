@@ -1,5 +1,8 @@
 <template>
-	<div class="demo-framework">
+	<div class="demo-framework"
+		:class="{
+			'setting': isSetting
+		}">
 		<b-row class="demo-framework-row"
 			v-for="(row, rowIndex) in structure"
 			:key="rowIndex">
@@ -60,9 +63,11 @@
 						</b-button>
 					</b-input-group-append>
 				</b-input-group>
-				<demo-draggable
-					:component="component||DemoBlankModule"
-					:is-active="isSetting" />
+				<div class="demo-slot h-100">
+					<demo-draggable
+						:component="component||DemoBlankModule"
+						:is-active="isSetting" />
+				</div>
 			</b-col>
 		</b-row>
 
@@ -182,7 +187,7 @@ export default {
 				row: null,
 				col: null
 			},
-			isSetting: true,
+			isSetting: 0,
 			structure: [
 				[DemoShortcut, DemoNotification],
 				[DemoWork],
@@ -207,17 +212,44 @@ export default {
 		bottom: 0;
 	}
 }
-.demo-framework-col {
-	height: 400px;
-	&.pointed {
-		background: red;
-	}
 
-	.demo-draggable-panel {
-		position: absolute;
-		bottom: 100%;
-		right: 0;
-		width: 240px;
+.demo-framework {
+	&.setting {
+		.demo-slot {
+			position: relative;
+			padding: 10px;
+			margin-top: -10px;
+			margin-left: -10px;
+
+			&::before {
+				z-index: -1;
+				border: 2px dashed #666;
+				top:0 ;
+				left: 0;
+				float: left;
+				width: 100%;
+				height: 100%;
+				content: "";
+				position: absolute;
+				display: block;
+			}
+		}
+	}
+	.demo-framework-col {
+		min-height: 400px;
+	
+		&.pointed {
+			.demo-slot {
+				background-color: rgba(123, 255, 0, 0.4);
+			}
+		}
+	
+		.demo-draggable-panel {
+			position: absolute;
+			bottom: 100%;
+			right: 0;
+			width: 240px;
+		}
 	}
 }
 </style>

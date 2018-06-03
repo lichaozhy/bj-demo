@@ -55,6 +55,7 @@ export default {
 
 <style lang="less">
 body {
+  background-color: #EFF3F6;
   background-image: url('./assets/banner-bg.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
@@ -81,7 +82,8 @@ body {
   background-image: linear-gradient(
     rgba(3, 63, 91, 1), 
     rgba(255, 255, 255, .1) 30%,
-    rgba(255, 255, 255, 1) 40%
+    rgba(255, 255, 255, 1) 40%,
+    #EFF3F6
   );
 }
 

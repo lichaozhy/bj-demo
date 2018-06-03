@@ -1,5 +1,5 @@
 <template>
-	<div class="demo-draggable-handler h-100 w-100"
+	<div class="demo-draggable-handler w-100"
 		:class="{
 			'active': isDragging
 		}"
@@ -8,8 +8,8 @@
 			left: `${offset.left}px`,
 		}">
 		<component
-			:is="component" 
-			class="h-100" />
+			class="demo-h-100"
+			:is="component" />
 		<div
 			@mouseup="dragStop()"
 			@mousemove="dragMove($event)"
@@ -88,7 +88,7 @@ export default {
 				}));
 
 				this.$el.style.display = 'block';
-			}, 200);
+			}, 100);
 		}
 	},
 	data() {
@@ -110,7 +110,12 @@ export default {
 </script>
 
 <style lang="less">
+.demo-h-100 {
+	height: 100%;
+}
+
 .demo-draggable-handler {
+	height: 100%;
 	position: relative;
 	overflow: hidden;
 
@@ -120,7 +125,7 @@ export default {
 }
 
 .demo-draggable-mask {
-	background: rgba(0, 0, 0, 0.05);
+	background: rgba(0, 0, 0, 0.192);
 	cursor: move;
 	top: 0;
 	left: 0;
