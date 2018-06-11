@@ -4,8 +4,8 @@
 		<div class="clearfix" style="height:80px">
 			<div id="demo-logo" class="float-left">
 				<div id="demo-logo-icon"><img src="@/assets/logo.png" /></div>
-				<h2>计算机学院个人工作平台</h2>
-				<p>The Computer Science & Tech work platform</p>
+				<h2>个人工作平台</h2>
+				<p>Personal work platform</p>
 			</div>
 
 			<div

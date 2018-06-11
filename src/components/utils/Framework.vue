@@ -96,6 +96,7 @@ import DemoShortcut from '../modules/Shortcut.vue';
 import DemoStatistics from '../modules/Statistics.vue';
 import DemoWarning from '../modules/Warning.vue';
 import DemoWork from '../modules/Work.vue';
+import RSS from '../modules/RSS.vue';
 
 export default {
 	components: {
@@ -194,6 +195,7 @@ export default {
 				[DemoWarning],
 				[DemoStatistics, DemoWarning],
 				[DemoWork],
+				[RSS]
 			]
 		}
 	},
