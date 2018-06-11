@@ -20,7 +20,7 @@
     </b-container>
 
     <b-jumbotron id="demo-footer" class="rounded-0 my-0">
-      Copyright@2017-2018  ALL Rights Reseveed 最高人民检察院<br>
+      Copyright@2017-2018  ALL Rights Reseveed XXXXXXXX<br>
       建议使用1366*768分辨率 >= IE9 以上版本浏览器
     </b-jumbotron>
   </div>

@@ -15,7 +15,7 @@ function warningMock() {
 	return new Array(5).fill({
 		startAt: '2018-05-05',
 		source: '档案管理',
-		title: '徐显明：紧紧围绕“五个结合”要求 切实加强检察理论研究工作'
+		title: '中国干预澳大利亚内政？这位澳前外长替中国说了句公道话'
 	});
 }
 

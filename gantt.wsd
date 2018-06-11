@@ -1,0 +1,54 @@
+@startgantt BJ-DEMO
+[前期调研与项目准备] as [INIT] lasts 14 days
+[项目组组建] as [INIT-Group] lasts 7 days
+[设施准备] as [INIT-ENV] lasts 5 days
+
+[INIT-ENV] starts 5 days after [INIT]'s start
+
+-- 研发周期 --
+
+[单点登陆系统开发] as [SSO] starts 7 days after [INIT]'s end
+[CAS研发调试环境] as [SSO-CAS] lasts 14 days
+[SSO兼容性登陆页面设计与实现] as [SSO-UI] lasts 14 days
+[SSO的CA验证研发] as [SSO-CA] lasts 21 days
+
+[SSO-CAS] starts at [SSO]'s start
+[SSO-UI] starts 4 days before [SSO-CAS]'s end
+[SSO-CA] starts 7 days after [SSO-UI]'s end
+
+[门户服务设计与开发] as [Portal] starts at [INIT]'s end
+[统一质量设计] as [Portal-design] lasts 28 days
+[DEMO验证] as [Portal-DEMO] lasts 42 days
+[门户Chrome, Edge, Firefox设计与研发] as [Portal-NEW] lasts 35 days
+[门户超级管理后台] as [Portal-Admin] lasts 35 days
+[门户IE9-11设计与研发] as [Portal-IE11] lasts 42 days
+[门户IE8设计与研发] as [Portal-IE8] lasts 56 days
+
+[Portal-design] starts at [Portal]'s start
+[Portal-DEMO] starts 14 days after [Portal-design]'s start
+[Portal-NEW] starts 14 days after [Portal-DEMO]'s start
+[Portal-IE11] starts 14 days after [Portal-NEW]'s start
+[Portal-IE8] starts 7 days after [Portal-IE11]'s start
+[Portal-Admin] starts 0 days after [Portal-NEW]'s end
+
+[统一组织人员信息组建和服务开发] as [UC] starts 7 days after [INIT]'s end
+[UC业务设计] as [UC-Design] lasts 21 days
+[UC接口设计与实现] as [UC-Dev] lasts 28 days
+
+[UC-Design] starts at [UC]'s start
+[UC-Dev] starts 7 days before [UC-Design]'s end
+
+[RSS业务设计与实现] as [RSS] starts 7 days after [UC-Design]'s end
+[RSS业务设计] as [RSS-Design] lasts 14 days
+[RSS接口实现] as [RSS-Dev] lasts 21 days
+
+[RSS-Design] starts at [RSS]'s start
+[RSS-Dev] starts 7 days before [RSS-Design]'s end
+
+-- 实施周期 --
+
+' [CAS部署]
+' [Portal部署]
+' [统一组织部署]
+' [RSS代理服务部署]
+@endgantt

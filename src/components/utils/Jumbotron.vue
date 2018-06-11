@@ -4,8 +4,8 @@
 		<div class="clearfix" style="height:80px">
 			<div id="demo-logo" class="float-left">
 				<div id="demo-logo-icon"><img src="@/assets/logo.png" /></div>
-				<h2>最高人民检察院个人工作平台</h2>
-				<p>The Supreme People's Procuratorate work platform</p>
+				<h2>计算机学院个人工作平台</h2>
+				<p>The Computer Science & Tech work platform</p>
 			</div>
 
 			<div
